@@ -4,7 +4,6 @@ const Estados = require('../models/estados.model')
 
 exports.create = async (req, res, next) => {
   try {
-
     const body = req.body
     const estados = new Estados(body)
     const savedItem = await estados.save()
@@ -20,7 +19,6 @@ exports.create = async (req, res, next) => {
 
 exports.update = async (req, res, next) => {
   try {
-
     const body = req.body
     let estado = await Estados.findOne({ _id: body._id })
     Object.assign(estado, body)
